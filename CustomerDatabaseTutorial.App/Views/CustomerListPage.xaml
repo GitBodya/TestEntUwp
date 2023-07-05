@@ -27,7 +27,9 @@
              GroupPanelPosition="Left"
              RelativePanel.AlignLeftWithPanel="True"
              RelativePanel.AlignRightWithPanel="True"
-             RelativePanel.Below="mainCommandBar" />
+             RelativePanel.Below="mainCommandBar" 
+             ItemsSource="{x:Bind ViewModel.Customers}"
+             UserEditMode="Inline"/>
         </RelativePanel>
     </Grid>
 </Page>
