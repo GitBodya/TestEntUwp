@@ -10,32 +10,24 @@
     mc:Ignorable="d">
 
     <Grid
-        x:Name="CustomerListRoot"
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+     x:Name="CustomerListRoot"
+     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <RelativePanel>
             <CommandBar
-                x:Name="mainCommandBar"
-                HorizontalAlignment="Stretch"
-                Background="AliceBlue">
-                <AppBarButton
-                    Click="{x:Bind ViewModel.CreateNewCustomerAsync}"
-                    Icon="Add"
-                    Label="New"
-                    ToolTipService.ToolTip="New customer"/>
-                <AppBarButton
-                    Click="{x:Bind ViewModel.DeleteAndUpdateAsync}"
-                    Icon="Delete"
-                    Label="Delete"
-                    ToolTipService.ToolTip="Delete customer" />
-                <AppBarButton
-                    Click="{x:Bind ViewModel.UpdateCustomersAsync}"
-                    Icon="Refresh"
-                    Label="Update"
-                    ToolTipService.ToolTip="Update to server" />
+             x:Name="mainCommandBar"
+             HorizontalAlignment="Stretch"
+             Background="AliceBlue">
+                <!--CommandBar content-->
             </CommandBar>
-            <!--Add StackPanel here-->
-            <!--Add DataGrid here -->
+            <telerikGrid:RadDataGrid
+             x:Name="DataGrid"
+             BorderThickness="0"
+             ColumnDataOperationsMode="Flyout"
+             GridLinesVisibility="None"
+             GroupPanelPosition="Left"
+             RelativePanel.AlignLeftWithPanel="True"
+             RelativePanel.AlignRightWithPanel="True"
+             RelativePanel.Below="mainCommandBar" />
         </RelativePanel>
-
     </Grid>
 </Page>
